@@ -1,6 +1,6 @@
 package com.example.weatherPublisher.publisher;
 
-import com.example.weatherPublisher.api.model.WeatherModel;
+import com.example.weatherPublisher.model.WeatherModel;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,14 +18,14 @@ public class PublishWeatherData {
 
     Logger logger = LoggerFactory.getLogger(PublishWeatherData.class);
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, WeatherModel> kafkaTemplate;
     private final RestTemplate restTemplate = new RestTemplate();
     private static final List<String> cities = Arrays.asList("riyadh", "jeddah", "mecca", "medina", "dammam", "khobar", "abha", "tabuk", "taif", "hail");
     @Value("${api.key}")
     private String API_KEY;
 
     public void publishWeatherData(WeatherModel weatherModels) {
-        kafkaTemplate.send("weather", weatherModels.toString());
+        kafkaTemplate.send("weather", weatherModels);
         logger.trace("publish data successfully");
     }
 }

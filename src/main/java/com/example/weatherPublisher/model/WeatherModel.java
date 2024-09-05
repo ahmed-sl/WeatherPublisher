@@ -1,4 +1,4 @@
-package com.example.weatherPublisher.api.model;
+package com.example.weatherPublisher.model;
 
 
 import lombok.AllArgsConstructor;

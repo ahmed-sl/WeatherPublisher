@@ -1,7 +1,7 @@
-package com.example.weatherPublisher.api.generator;
+package com.example.weatherPublisher.weatherGenerator;
 
 
-import com.example.weatherPublisher.api.model.WeatherDataResponse;
+import com.example.weatherPublisher.apiModels.WeatherDataResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
