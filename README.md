@@ -15,4 +15,3 @@ WeatherPublisher is a Spring Boot application designed to publish weather data t
 
 ```bash
 git clone https://github.com/ahmed-sl/WeatherPublisher.git
-cd WeatherPublisher
